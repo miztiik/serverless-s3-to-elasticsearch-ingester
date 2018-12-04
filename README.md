@@ -41,12 +41,17 @@ aws s3 cp /var/s3-to-es.zip s3://s3-log-dest/log-ingester/
 ```
 
 
+### Configure Lambda Function
+- Provide the previously created IAM role and the bucket object URL for the lambda code.
+- Set the resource & time limit based on the size of your log files
 
 
+### Setup S3 Event Triggers
+- In the management tab of the S3 Bucket, trigger the lambda created in the previous section for all objects.
 
 
+### Test the function
+- Upload object to S3
+- Login to Kibana dashboard or ES Head plugin to check the newly created index & Logs
 
 
-
-.decode("utf-8", errors="ignore")
- ```
