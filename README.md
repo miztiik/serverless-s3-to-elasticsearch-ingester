@@ -40,14 +40,22 @@ zip -r /var/s3-to-es.zip *
 aws s3 cp /var/s3-to-es.zip s3://s3-log-dest/log-ingester/
 ```
 
+### Setup S3 Event Triggers
+we want the code to execute whenever a log file arrives in an S3 bucket:
+1. Choose S3\.
+1. Choose your bucket\.
+1. For **Event type**, choose **PUT**\.
+1. For **Prefix**, type `logs/`\.
+1. For **Filter pattern**, type `.txt` or `.log`\.
+1. Select **Enable trigger**\.
+1. Choose **Add**\.
 
 ### Configure Lambda Function
-- Provide the previously created IAM role and the bucket object URL for the lambda code.
-- Set the resource & time limit based on the size of your log files
+1. For **Handler**, type `sample.handler`\. This setting tells Lambda the file \(`sample.py`\) and method \(`handler`\) that it should execute after a trigger\.
+1. For **Code entry type**, choose **Choose \.ZIP file from S3**, and Update the URL in the below field\.
+1. Choose **Save**\.
 
-
-### Setup S3 Event Triggers
-- In the management tab of the S3 Bucket, trigger the lambda created in the previous section for all objects.
+- Set the **resource & time limit** based on the size of your log files
 
 
 ### Test the function
