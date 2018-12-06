@@ -51,7 +51,7 @@ we want the code to execute whenever a log file arrives in an S3 bucket:
 1. Choose **Add**\.
 
 ### Configure Lambda Function
-1. For **Handler**, type `sample.handler`\. This setting tells Lambda the file \(`sample.py`\) and method \(`handler`\) that it should execute after a trigger\.
+1. For **Handler**, type `s3-to-es.lambda_handler`\. This setting tells Lambda the file \(`s3-to-es.py`\) and method \(`lambda_handler`\) that it should execute after a trigger\.
 1. For **Code entry type**, choose **Choose \.ZIP file from S3**, and Update the URL in the below field\.
 1. Choose **Save**\.
 
