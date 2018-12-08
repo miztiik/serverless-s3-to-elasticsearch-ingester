@@ -54,7 +54,7 @@ we want the code to execute whenever a log file arrives in an S3 bucket:
 1. For **Handler**, type `s3-to-es.lambda_handler`\. This setting tells Lambda the file \(`s3-to-es.py`\) and method \(`lambda_handler`\) that it should execute after a trigger\.
 1. For **Code entry type**, choose **Choose a file from Amazon S3**, and Update the URL in the below field\.
 1. Choose **Save**\.
-1. If you are running ES in a VPC Access, Make sure your Lambda runs in the same VPC and can reach your ES domain. Otherwise, Lambda cannot ingest data into ES
+1. **If you are running ES in a VPC Access, Make sure your Lambda runs in the same VPC and can reach your ES domain. Otherwise, Lambda cannot ingest data into ES**
 - Set the **resource & time limit** based on the size of your log files
 
 
