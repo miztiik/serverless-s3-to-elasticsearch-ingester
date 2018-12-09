@@ -13,9 +13,7 @@ Follow this article in **[Youtube](https://www.youtube.com/c/ValaxyTechnologies)
 1. Create IAM Role - `s3-to-es-ingestor-bot` [Get help here](https://www.youtube.com/watch?v=5g0Cuq-qKA0&index=11&list=PLxzKY3wu0_FLaF9Xzpyd9p4zRCikkD9lE)
    - Attach following managed permissions - `AWSLambdaExecute`
 
-
 #### Creating the Lambda Deployment Package
- 
  ```sh
  # Install Dependancies
 yum -y install python-pip zip
@@ -40,7 +38,14 @@ zip -r /var/s3-to-es.zip *
 aws s3 cp /var/s3-to-es.zip s3://s3-log-dest/log-ingester/
 ```
 
-### Setup S3 Event Triggers
+### Configure Lambda Function
+1. For **Handler**, type `s3-to-es.lambda_handler`\. This setting tells Lambda the file \(`s3-to-es.py`\) and method \(`lambda_handler`\) that it should execute after a trigger\.
+1. For **Code entry type**, choose **Choose a file from Amazon S3**, and Update the URL in the below field\.
+1. Choose **Save**\.
+1. **If you are running ES in a VPC Access, Make sure your Lambda runs in the same VPC and can reach your ES domain. Otherwise, Lambda cannot ingest data into ES**
+- Set the **resource & time limit** based on the size of your log files
+
+#### Setup S3 Event Triggers to Lambda Function
 we want the code to execute whenever a log file arrives in an S3 bucket:
 1. Choose S3\.
 1. Choose your bucket\.
@@ -49,13 +54,6 @@ we want the code to execute whenever a log file arrives in an S3 bucket:
 1. For **Filter pattern**, type `.txt` or `.log`\.
 1. Select **Enable trigger**\.
 1. Choose **Add**\.
-
-### Configure Lambda Function
-1. For **Handler**, type `s3-to-es.lambda_handler`\. This setting tells Lambda the file \(`s3-to-es.py`\) and method \(`lambda_handler`\) that it should execute after a trigger\.
-1. For **Code entry type**, choose **Choose a file from Amazon S3**, and Update the URL in the below field\.
-1. Choose **Save**\.
-1. **If you are running ES in a VPC Access, Make sure your Lambda runs in the same VPC and can reach your ES domain. Otherwise, Lambda cannot ingest data into ES**
-- Set the **resource & time limit** based on the size of your log files
 
 
 ### Test the function
