@@ -9,7 +9,7 @@ Follow this article in **[Youtube](https://www.youtube.com/c/ValaxyTechnologies)
 1. S3 Bucket - BucketName: `s3-log-dest`
    - _You will have to create your own bucket and use that name in the instructions_
 1. Amazon Elaticsearch Domain [Get help here](https://www.youtube.com/watch?v=cahU_A4c-eE)
-1. Amazon Linux with AWS CLI Profile configured
+1. Amazon Linux with AWS CLI Profile configured ( _S3 Full Access Required_ )
 1. Create IAM Role - `s3-to-es-ingestor-bot` [Get help here](https://www.youtube.com/watch?v=5g0Cuq-qKA0&index=11&list=PLxzKY3wu0_FLaF9Xzpyd9p4zRCikkD9lE)
    - Attach following managed permissions - `AWSLambdaExecute`
 
