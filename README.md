@@ -18,7 +18,7 @@ Follow this article in **[Youtube](https://www.youtube.com/c/ValaxyTechnologies)
  
  ```sh
  # Install Dependancies
-yum -y install zip
+yum -y install python-pip zip
 pip install virtualenv
 
 # Prepare the log ingestor virtual environment 
