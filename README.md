@@ -1,7 +1,7 @@
 # Serverless S3 To Elasticsearch Ingester
 We can load streaming data(say application logs) to Amazon Elasticsearch Service domain from many different sources. Native services like Kinesis & Cloudwatch have built-in support to push data to ES. But services like S3 & DynamoDB can use Lambda function to ingest data to ES.
 
-Follow this article in **[Youtube](https://www.youtube.com/c/ValaxyTechnologies)**
+Follow this article in **[Youtube](https://youtu.be/Ysd9tWuhE8g)**
 
 ![Serverless S3 To Elasticsearch Ingester](https://raw.githubusercontent.com/miztiik/serverless-s3-to-elasticsearch-ingester/master/images/serverless-s3-to-es-ingester-valaxy-miztiik.png)
 
