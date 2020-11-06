@@ -30,7 +30,7 @@ pip3 freeze > requirements.txt
 # Copy the ingester code to the directory
 COPY THE CODE IN THE REPO TO THIS DIRECTORY
 # Update your ES endpoint (NOT KIBANA URL)
-IN line
+IN line 27
 # Set the file permission to execute mode
 chmod 754 s3-to-es.py
 
