@@ -18,16 +18,19 @@ Login to the linux machine & Execute the commands below,
  ```sh
  # Install Dependancies
 yum -y install python-pip zip
-pip install virtualenv
+pip3 install virtualenv
 
 # Prepare the log ingestor virtual environment 
 mkdir -p /var/s3-to-es && cd /var/s3-to-es
 virtualenv /var/s3-to-es
 cd /var/s3-to-es && source bin/activate
-pip install requests_aws4auth -t .
-pip freeze > requirements.txt
+pip3 install requests_aws4auth -t .
+pip3 install requests -t .
+pip3 freeze > requirements.txt
 # Copy the ingester code to the directory
 COPY THE CODE IN THE REPO TO THIS DIRECTORY
+# Update your ES endpoint (NOT KIBANA URL)
+IN line
 # Set the file permission to execute mode
 chmod 754 s3-to-es.py
 
