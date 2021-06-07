@@ -105,7 +105,7 @@ def lambda_handler(event, context):
     for line in lines:
         docData['content'] = str(line)
         indexDocElement(es_Url, awsauth, docData)
-    logger.info('File processing comlplete. Check logs for index status')
+    logger.info('File processing complete. Check logs for index status')
 
 
 if __name__ == '__main__':
